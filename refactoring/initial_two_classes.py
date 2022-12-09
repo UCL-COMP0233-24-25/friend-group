@@ -60,6 +60,7 @@ if __name__ == "__main__":
     # ... then forget Nash and John's connection
     my_group.forget("Nash", "John")
 
+    assert my_group.contains("John"), "John should be in the group"
     assert my_group.size() == 4, "Group should have 4 members"
     assert my_group.average_age() == 28.75, "Average age of the group is incorrect!"
     assert my_group.number_of_connections("Nash") == 1, "Nash should only have one relation"
