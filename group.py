@@ -6,40 +6,38 @@ my_group = {
         "job": "biologist",
         "age": 26,
         "relations": {
-        "friends": {"Zalika"},
-        "partner": "John",
+            "friends": {"Zalika"},
+            "partner": "John",
         },
     },
     {
         "name": "Zalika",
         "job": "artist",
         "age": 28,
-        "relations":{
-        "friends": {"Jill"},
-        "landlord": "Nash",
-        "partner": None,
-        }
+        "relations": {
+            "friends": {"Jill"},
+            "landlord": "Nash",
+            "partner": None,
+        },
     },
     {
         "name": "John",
         "job": "writer",
         "age": 27,
-        "relations":
-        {
-        "friends": set(),
-        "partner": "Jill",
+        "relations": {
+            "friends": set(),
+            "partner": "Jill",
         },
     },
     {
         "name": "Nash",
         "job": "chef",
         "age": 34,
-        "relations":
-        {
-        "friends": set(),
-        "cousin": {"John"},
-        "tenant": "Zalika",
-        "partner": None,
+        "relations": {
+            "friends": set(),
+            "cousin": {"John"},
+            "tenant": "Zalika",
+            "partner": None,
         },
     },
 }
