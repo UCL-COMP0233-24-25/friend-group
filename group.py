@@ -43,3 +43,20 @@ print(f"maximum age of people who have at least one relation: {max_age_with_ge_o
 # Finding the maximum age of people who have at least one friend
 max_age_with_ge_one_friend = max([person['age'] for person in my_group.values() if list(person['connections'].values()).count("friend")>=1])
 print(f"maximum age of people who have at least one friend {max_age_with_ge_one_friend}")
+
+def forget(person1, person2):
+    if person1 in my_group and person2 in my_group[person1]['connections']:
+        del my_group[person1]['connections'][person2]
+        
+    if person2 in my_group and person1 in my_group[person2]['connections']:
+        del my_group[person2]['connections'][person1]
+    
+def add_person(name, age, job, relations):
+    my_group[name] = {
+        "age": age,
+        "job": job,
+        "connections": relations
+    }
+    
+def average_age():
+    return np.mean([person['age'] for person in my_group.values()])
