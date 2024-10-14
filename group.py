@@ -1,6 +1,7 @@
 """An example of how to represent a group of acquaintances in Python."""
 
 # Your code to go here...
+import numpy as np
 
 my_group = {
     'Jill': {
@@ -73,3 +74,8 @@ def add_person(name, age, job=None, relations=None):
         print("Connections must be dict")
         return
     my_group[name] = {"age": age, "job": job, "connections": relations}
+
+# Mean age
+def average_age():
+    ages = [my_group[person]["age"] for person in my_group.keys()] 
+    return np.mean(ages)
