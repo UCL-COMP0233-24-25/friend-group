@@ -1,6 +1,6 @@
 """An example of how to represent a group of acquaintances in Python."""
 
-my_group = {
+my_group = [
     {
         "name": "Jill",
         "job": "biologist",
@@ -40,4 +40,4 @@ my_group = {
             "partner": None,
         },
     },
-}
+]
