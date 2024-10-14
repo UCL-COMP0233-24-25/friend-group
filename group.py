@@ -8,12 +8,13 @@ class persons:
         self.age = age
         self.relation = {}
 
-    def add_relation(self, add_name, add_relation):
-        self.relation[add_name] = add_relation
+    def add_relation(self, add_name, add_age, add_relation, job = None):
+        self.relation[add_name] = [add_age, add_relation, job]
 
-Daniel = persons("Daniel", 24)
+
 Shyam = persons("Shyam", 25)       
 
-Shyam.add_relation("Daniel", "friend")
+Shyam.add_relation("Daniel", 25, "friend", "doctor")
+Shyam.add_relation("John", 26, "boss")
 lists = Shyam.relation
 print(lists)
