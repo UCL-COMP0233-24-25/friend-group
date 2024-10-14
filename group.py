@@ -9,11 +9,11 @@ jill = {
     "job": "biologist",
     "connections": [
         {
-            "zalinka": zalinka,
+            "name": "Zalinka",
             "connection": "friend"
         },
         {
-            "john": john,
+            "name": "John",
             "connection": "partner"
 
         }
@@ -27,7 +27,7 @@ zalinka = {
     "job": "artist",
     "connections": [
         {
-            "jill": jill,
+            "name": "Jill",
             "connection": "friend"
         },
     ]
@@ -40,7 +40,7 @@ john = {
     "job": "writer",
     "connections": [
         {
-            "jill": jill,
+            "name": "Jill",
             "connection": "partner"
         },
     ]
@@ -53,11 +53,11 @@ nash = {
     "job": "chef",
     "connections": [
         {
-            "john": john,
+            "name": "John",
             "connection": "counsin"
         },
         {
-            "zalinka": zalinka,
+            "name": "Zalinka",
             "connection": "landlord"
         },
     ]
