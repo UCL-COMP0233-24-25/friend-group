@@ -2,4 +2,10 @@
 
 # Your code to go here...
 
-my_group =
+my_group = [
+    {"name": "Tom", "age": 12, "job": "developer", "relation": "Gils friend"},
+    {"name": "Gil", "age": 12, "job": "developer","relation": "Toms friend"},
+    {"name": "Ben", "age": 12, "job": "developer","relation": "Harry's colleague"},
+    {"name": "Harry", "age": 12, "job": "developer","relation": "Bens's colleague"}
+]
+
