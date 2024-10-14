@@ -8,7 +8,7 @@ my_group =[{ "name": "Luhan", "age": 22, "job": "Student"},
 
 
 
-
+---
 for row in my_group:  
     print(f"{row['name']} is {row['age']}, a {row['job']}.")  
 
