@@ -82,4 +82,4 @@ def max_age_of_person_with_friend(group):
         if "friend" in group[person]["relations"].values():
             if group[person]["age"] > max_age:
                 max_age = group[person]["age"]
-
+    return max_age
