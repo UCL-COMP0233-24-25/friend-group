@@ -2,7 +2,7 @@
 
 # Your code to go here...
 
-data_structure = [
+my_group = [
     {"name": "Tom", "age": 12, "job": "developer", "relation": "Gils friend"},
     {"name": "Gil", "age": 12, "job": "developer","relation": "Toms friend"},
     {"name": "Ben", "age": 12, "job": "developer","relation": "Harry's colleague"},
