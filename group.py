@@ -34,6 +34,11 @@ my_group = {
             'John': 'cousin',
             'Zalika': 'landlord'
         }
+    },
+    'Nobody': {
+        'age': 24,
+        'job': None,
+        'connections': None
     }
 }
 
