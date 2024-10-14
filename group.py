@@ -43,7 +43,17 @@ my_group = {
 }
 
 # Quick test - printing who knows who
-for name1 in my_group.keys():
-    if my_group[name1]['connections']:
-        for name2 in my_group[name1]['connections']:
-            print(f'{name1} knows {name2}')
+# for name1 in my_group.keys():
+#     if my_group[name1]['connections']:
+#         for name2 in my_group[name1]['connections']:
+#             print(f'{name1} knows {name2}')
+
+### STRETCH GOALS ####
+# Forget function
+def forget(person_1, person_2):
+    if person_1 in my_group and person_2 in my_group[person_1]["connections"]:
+        my_group[person_1]["connections"].pop(person_2)
+    if person_2 in my_group and person_1 in my_group[person_2]["connections"]:
+        my_group[person_2]["connections"].pop(person_1)
+    else:
+        print("Error: check names.")
