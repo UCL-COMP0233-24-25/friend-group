@@ -34,6 +34,24 @@ my_group = {
         }
     }
 }
-print(my_group)
+# print(my_group)
 
 
+# Exercise 7 
+
+# Print max age
+def get_max_age(dict):
+    '''Input a dictionary {"name" :{"age":_}}
+    Return: max age of person in group and their name'''
+    max_age=0
+    for name in dict:
+        age = dict[name]["age"]
+        if age > max_age:
+            max_age = age
+            oldest_person = name
+    return max_age, oldest_person
+
+print(get_max_age(my_group))
+
+
+# 
