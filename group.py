@@ -2,4 +2,4 @@
 
 # Your code to go here...
 
-my_group =
+my_group = {{'relations':'friend':'Jill','Zalika', 'partner':'Jill', 'John', 'cousin':'Nash',, 'landlord'}}
