@@ -57,3 +57,19 @@ def forget(person_1, person_2):
         my_group[person_2]["connections"].pop(person_1)
     else:
         print("Error: check names.")
+
+# Add Person
+def add_person(name, age, job=None, relations=None):
+    if not isinstance(name, str):
+        print("Name must be string")
+        return
+    if not isinstance(age, int):
+        print("Age must be integer")
+        return
+    if job and not isinstance(job, str):
+        print("Job must be string")
+        return
+    if relations and not isinstance(relations, dict):
+        print("Connections must be dict")
+        return
+    my_group[name] = {"age": age, "job": job, "connections": relations}
