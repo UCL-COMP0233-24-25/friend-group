@@ -21,3 +21,29 @@ def one_way_connection(name, related_to, relationship):
 def two_way_connection(name1, name2, relationship1, relationship2):
     one_way_connection(name1, name2, relationship1)
     one_way_connection(name2, name1, relationship2)
+
+#removes connection between people
+def forget(name1, name2):
+    for person in my_group:
+        if person["name"] == name1:
+            for relationship in person["connections"]:
+                if name2 in person["connections"][relationship]:
+                    person["connections"][relationship].remove(name2)
+        if person["name"] == name2:
+            for relationship in person["connections"]:
+                if name1 in person["connections"][relationship]:
+                    person["connections"][relationship].remove(name1)
+
+#use previous connection func to add connections
+def add_person(name, age, job):
+    my_group.append({"name": name, "age": age, "job": job, "connections": {}})
+add_person("Tom", 30, "engineer")
+one_way_connection("Tom", "Jill", "friends")
+print(my_group)
+
+def average_age():
+    total_age = 0
+    for person in my_group:
+        total_age += person["age"]
+    return total_age/len(my_group)
+print(average_age())
