@@ -17,3 +17,10 @@ week3_group=[{
 ,"connections":[{"name":"John","relationship":"cousin"},{"name":"Zalika","relationship":"landlord"}]}
 ]
 # my_group =
+
+#Code for Maximum Age
+max_age = max([x["age"] for x in week3_group])
+#Code for Average number of connections
+ave_connections = sum(len(x["connections"]) for x in week3_group) / len(week3_group)
+#Code for max age of people in the group that have at least 1 relation
+maxage1= max([x["age"] for x in week3_group if len(x["connections"])>0])
