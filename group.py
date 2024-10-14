@@ -8,16 +8,9 @@ jill = {
     "age": 26,
     "job": "biologist",
     "connections": [
-        {
-            "name": "Zalinka",
-            "connection": "friend"
-        },
-        {
-            "name": "John",
-            "connection": "partner"
-
-        }
-    ]
+        {"name": "Zalinka", "connection": "friend"},
+        {"name": "John", "connection": "partner"},
+    ],
 }
 
 # Zalika is 28, an artist, and Jill's friend
@@ -26,11 +19,8 @@ zalinka = {
     "age": 28,
     "job": "artist",
     "connections": [
-        {
-            "name": "Jill",
-            "connection": "friend"
-        },
-    ]
+        {"name": "Jill", "connection": "friend"},
+    ],
 }
 
 # John is 27, a writer, and Jill's partner.
@@ -39,11 +29,8 @@ john = {
     "age": 27,
     "job": "writer",
     "connections": [
-        {
-            "name": "Jill",
-            "connection": "partner"
-        },
-    ]
+        {"name": "Jill", "connection": "partner"},
+    ],
 }
 
 # Nash is 34, a chef, John's cousin and Zalika's landlord.
@@ -52,15 +39,9 @@ nash = {
     "age": 34,
     "job": "chef",
     "connections": [
-        {
-            "name": "John",
-            "connection": "counsin"
-        },
-        {
-            "name": "Zalinka",
-            "connection": "landlord"
-        },
-    ]
+        {"name": "John", "connection": "counsin"},
+        {"name": "Zalinka", "connection": "landlord"},
+    ],
 }
 
 my_group = [jill, zalinka, john, nash]
