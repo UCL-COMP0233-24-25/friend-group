@@ -39,7 +39,7 @@ my_group = {
         "friends": set(),
         "cousin": {"John"},
         "tenant": "Zalika",
-        "partner": "Jill",
+        "partner": None,
         },
     },
 }
