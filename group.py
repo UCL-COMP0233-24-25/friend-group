@@ -13,7 +13,7 @@ Zalika = {'name':'Zalika', 'age':'28', 'job':'biologist',
             'connections':{'friend':['Jill']}
             }
 
-Jhon = {'name':'Jhon', 'age':'27', 'job':'writer',
+John = {'name':'Jhon', 'age':'27', 'job':'writer',
             'connections':{'partner':['Jill']}
             }
 
@@ -22,4 +22,8 @@ Nash = {'name':'Nash', 'age':'34', 'job':'chef',
                            'landlord':['Zalika']}
             }
 
-my_group.append()
+my_group['Jill'] = Jill
+my_group['Zalika'] = Zalika
+my_group['John'] = John
+my_group['Nash'] = Nash
+print(my_group)
