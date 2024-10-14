@@ -4,6 +4,6 @@
 my_group = {
     "Jill":{"age":26,"job":"biologist","realtionship":{"friend":["Zalika"],"partner":["John"]}},
     "Zalika":{"age":28,"job":"artist","realtionship":{"friend":["Jill"]}},
-    "Zalika":{"age":27,"job":"writer","realtionship":{"partner":["Jill"]}},
+    "John":{"age":27,"job":"writer","realtionship":{"partner":["Jill"]}},
     "Nash":{"age":34,"job":"chef","realtionship":{"landlord":["Zalika"]}},
 }
