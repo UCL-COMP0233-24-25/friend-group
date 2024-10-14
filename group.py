@@ -2,7 +2,35 @@
 
 # Your code to go here...
 
-my_group = [{ "name": "Jill", "age": 26, "job": biologist,"friend":"Zalika","partner":"John"}, 
-        {"name": "Zalika", "age": 28, "job": artist,"friend":"Jill"},
-        {"name": "John", "age": 27, "job": writer,"parter":"Jill"},
-           {"name": "Nash", "age": 34, "job": chef,"cousin":"John"}]
+my_group = group = {
+    "Jill": {
+        "age": 26,
+        "job": "biologist",
+        "relations": {
+            "Zalika": "friend",
+            "John": "partner"
+        }
+    },
+    "Zalika": {
+        "age": 28,
+        "job": "artist",
+        "relations": {
+            "Jill": "friend"
+        }
+    },
+    "John": {
+        "age": 27,
+        "job": "writer",
+        "relations": {
+            "Jill": "partner"
+        }
+    },
+    "Nash": {
+        "age": 34,
+        "job": "chef",
+        "relations": {
+            "John": "cousin",
+            "Zalika": "landlord"
+        }
+    }
+}
