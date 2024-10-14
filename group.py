@@ -1,4 +1,4 @@
-"""An example of how to represent a group of acquaintances in Python."""
+"""Summary data from group #7"""
 
 # Your code to go here...
 
@@ -75,3 +75,36 @@ add_person("Jiasheng", 24, "HPC Engineer", [{"name": "Jill", "relationship": "fr
 print_my_group()
 avg_age()
 """
+
+"""Implement my own functions"""
+
+# Q1: the maximum age of people in the group
+max_age = max([person['age'] for person in my_group])
+print(f"the maximum age of people in the group: {max_age}")
+
+# Q2: the average (mean) number of relations among members of the group
+avg_relation = sum(len(person['relations']) for person in my_group) / len(my_group)
+print(f"the average (mean) number of relations among members of the group: {avg_relation}")
+
+# Q3: the maximum age of people in the group that have at least one relation
+max_age_one_relation = max([person['age'] for person in my_group if person['relations']])
+print(f"the maximum age of people in the group that have at least one relation: {max_age_one_relation}")
+
+# Q4: the maximum age of people in the group that have at least one friend
+person_with_friend = []
+for person in my_group:
+    for rel in person['relations']:
+        if rel['relationship'] == 'friend':
+            person_with_friend.append(person['age'])
+max_age_one_friend = max(person_with_friend)
+print(f"the maximum age of people in the group that have at least one friend: {max_age_one_friend}")
+
+"""
+[more advanced method for Q4] this method taught by my team member during the class 
+utilize the generator expression with any() function
+"""
+max_age_friend_advanced = max(
+    (person['age'] for person in my_group if any(rel['relationship'] == 'friend' for rel in person['relations'])),
+    default=None
+)
+print(f"the advanced method utilizing the generator expression with any() function: {max_age_friend_advanced}")
