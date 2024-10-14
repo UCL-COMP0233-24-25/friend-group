@@ -7,7 +7,7 @@ my_group = [
         "name": "Jill",
         "age": 26,
         "job": "Biologist",
-        "connections": [
+        "relations": [
             {"name": "Zalika", "relationship": "friend"},
             {"name": "John", "relationship": "partner"}
         ]
@@ -16,7 +16,7 @@ my_group = [
         "name": "Zalika",
         "age": 28,
         "job": "Artist",
-        "connections": [
+        "relations": [
             {"name": "Jill", "relationship": "friend"}
         ]
     }, 
@@ -24,7 +24,7 @@ my_group = [
         "name": "John",
         "age": 27,
         "job": "Writer",
-        "connections": [
+        "relations": [
             {"name": "Jill", "relationship": "partner"},
             {"name": "Nash", "relationship": "cousin"}
         ]
@@ -33,7 +33,7 @@ my_group = [
         "name": "Nash",
         "age": 34,
         "job": "Chef",
-        "connections": [
+        "relations": [
             {"name": "John", "relationship": "cousin"},
             {"name": "Zalika", "relationship": "landlord"}
         ]
@@ -43,7 +43,35 @@ my_group = [
 def print_my_group():
     for people in my_group:
         print(f"{people['name']} is {people['age']}, a/an {people.get('job', 'No job')}, ", end='')
-        connections = [f"{connection['name']}'s {connection['relationship']}" for connection in people['connections']]
-        print(f"{' and '.join(connections)}")
+        relations = [f"{connection['name']}'s {connection['relationship']}" for connection in people['relations']]
+        print(f"{' and '.join(relations)}")
 
+def forget(person1, person2):
+    for person in my_group:
+        if person["name"] == person1:
+            person["relations"] = [c for c in person["relations"] if c["name"] != person2]
+        if person["name"] == person2:
+            person["relations"] = [c for c in person["relations"] if c["name"] != person1]
+
+def add_person(name, age, job, relations):
+    new_person = {
+            "name": name,
+            "age": int(age),
+            "job": job,
+            "relations": relations
+    }
+    my_group.append(new_person)
+
+def avg_age():
+    total_ages = 0
+    for person in my_group:
+        total_ages += person['age']
+    average_age = total_ages / len(my_group)
+    print(f"The average age of my group is {average_age}")
+
+"""print_my_group()
+forget("Jill", "John")
+add_person("Jiasheng", 24, "HPC Engineer", [{"name": "Jill", "relationship": "friend"}])
 print_my_group()
+avg_age()
+"""
