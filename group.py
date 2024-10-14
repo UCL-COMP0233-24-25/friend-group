@@ -8,8 +8,7 @@ my_group = {
         'job': 'biologist',
         'connections': {
             'Zalika': 'friend',
-            'John': 'partner',
-            'Nash': 'cousin'
+            'John': 'partner'
         }
     },
     'Zalika': {
@@ -24,7 +23,8 @@ my_group = {
         'age': 27,
         'job': 'writer',
         'connections': {
-            'Jill': 'partner'
+            'Jill': 'partner',
+            'Nash': 'cousin'
         }
     },
     'Nash': {
