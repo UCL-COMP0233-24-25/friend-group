@@ -36,3 +36,9 @@ my_group = {
         }
     }
 }
+
+# Quick test - printing who knows who
+for name1 in my_group.keys():
+    if my_group[name1]['connections']:
+        for name2 in my_group[name1]['connections']:
+            print(f'{name1} knows {name2}')
