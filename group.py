@@ -1,45 +1,34 @@
-"""An example of how to represent a group of acquaintances in Python."""
-class Person:
-    def __init__(self, name, age, job):
-        self.name = name
-        self.age = age
-        self.job = job
-        self.friends = []
-
-    def add_friend(self,relationship, friend):
-        self.friends.append({friend:relationship})
-
-    def is_friends_with(self, friend):
-        return friend in self.friends
-    
-    def __str__(self):
-        relationships = []
-        for friend in self.friends:
-            for key, value in friend.items():
-                relationships.append(f"{key}'s {value}")
-        relationships_str = ' and '.join(relationships)
-        print(f"{self.name} is {self.age}, a {self.job} and she is {relationships_str}.")
-        return ""
-    
-## Jill is 26, a biologist and she is Zalika's friend and John's partner.
-Jill = Person("Jill", 26, "biologist")
-Jill.add_friend("friend", "Zalika")
-Jill.add_friend("partner", "John")
-str(Jill)
+def print_description(dict):
+    relationships = []
+    for key,value in dict["Relationships"].items():
+        relationships.append(f"{value}'s {key.lower()}")
+    relationships_str = ' and '.join(relationships)
+    if dict["Job"][0] in ["A","E","I","O","U"]: j = "an"
+    else: j = "a"
+    print(f"{dict["Name"]} is {dict["Age"]}, {j} {dict["Job"].lower()}, and {relationships_str}.")
 
 
-#Zalika is 28, an artist, and Jill's friend
-Zalika = Person("Zalika", 28, "artist")
-Zalika.add_friend("friend", "Jill")
-str(Zalika)
+Jill = {"Name": "Jill",
+          "Age": 26,
+          "Job": "Biologist",
+          "Relationships": {"Friend": "Zalika", "Partner": "John"}}
 
-#John is 27, a writer, and Jill's partner.
-John = Person("John", 27, "writer")
-John.add_friend("partner", "Jill")
-str(John)
+Zalika = {"Name": "Zalika",
+          "Age": 28,
+          "Job": "Artist",
+          "Relationships": {"Friend": "Jill"}}
 
-#Nash is 34, a chef, John's cousin and Zalika's landlord.
-Nash = Person("Nash", 34, "chef")
-Nash.add_friend("cousin", "John")
-Nash.add_friend("landlord", "Zalika")
-str(Nash)
+John = {"Name": "John",
+        "Age": 27,
+        "Job": "Writer",
+        "Relationships": {"Partner": "Jill"}}
+
+Nash = {"Name": "Nash",
+        "Age": 34,
+        "Job": "Chef",
+        "Relationships": {"Cousin": "John", "Landlord": "Zalika"}}
+
+People = [Jill, Zalika, John, Nash]
+
+for i in People:
+    print_description(i)
