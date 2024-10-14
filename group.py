@@ -2,4 +2,37 @@
 
 # Your code to go here...
 
-my_group =
+my_group = {
+    'Jill': {
+        'age': 26,
+        'job': 'biologist',
+        'connections': {
+            'Zalika': 'friend',
+            'John': 'partner',
+            'Nash': 'cousin'
+        }
+    },
+    'Zalika': {
+        'age': 28,
+        'job': 'artist',
+        'connections': {
+            'Jill': 'friend',
+            'Nash': 'tenant'
+        }
+    },
+    'John': {
+        'age': 27,
+        'job': 'writer',
+        'connections': {
+            'Jill': 'partner'
+        }
+    },
+    'Nash': {
+        'age': 34,
+        'job': 'chef',
+        'connections': {
+            'John': 'cousin',
+            'Zalika': 'landlord'
+        }
+    }
+}
