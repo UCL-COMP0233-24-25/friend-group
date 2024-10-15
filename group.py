@@ -39,7 +39,7 @@ my_group = {
     'Nobody': {
         'age': 40,
         'job': None,
-        'connections': None
+        'connections': {}
     }
 }
 
@@ -84,7 +84,7 @@ def average_age():
 def homework():
     max_age = np.max([person["age"] for person in my_group.values()])
     print(max_age)
-    mean_connections = np.mean([len(person["connections"]) for person in my_group.values() if person["connections"]])
+    mean_connections = np.mean([len(person["connections"]) for person in my_group.values()])
     print(mean_connections)
     max_age_with_connections = np.max([person["age"] for person in my_group.values() if person["connections"]])
     print(max_age_with_connections)
