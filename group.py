@@ -79,3 +79,10 @@ def add_person(name, age, job=None, relations=None):
 def average_age():
     ages = [my_group[person]["age"] for person in my_group.keys()] 
     return np.mean(ages)
+
+# Homework Assignment
+def homework():
+    max_age = np.max([person["age"] for person in my_group.values()])
+    print(max_age)
+
+homework()
