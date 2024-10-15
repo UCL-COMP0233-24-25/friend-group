@@ -24,3 +24,5 @@ max_age = max([x["age"] for x in week3_group])
 ave_connections = sum(len(x["connections"]) for x in week3_group) / len(week3_group)
 #Code for max age of people in the group that have at least 1 relation
 maxage1= max([x["age"] for x in week3_group if len(x["connections"])>0])
+# Code for max age of people in the group that have at least 1 friend
+maxage2=max([x["age"] for x in week3_group if any([z=="friend" for y in x["connections"] for z in y.values()])])
