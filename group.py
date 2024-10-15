@@ -31,5 +31,8 @@ group = {
             "John": "cousin",
             "Zalika": "landlord"
         }
-    }
+    } 
 }
+
+
+print("Max age: ", max(x["age"] for x in group.values()) )
