@@ -41,3 +41,10 @@ my_group = [
         },
     },
 ]
+
+if __name__== "__main__":   
+    max_age = max([person["age"] for person in my_group])
+    no_of_relations = (sum([len(person["relations"]) for person in my_group])/len([len(person["relations"]) for person in my_group]))
+    max_age_relations = max([person["age"] for person in my_group if len(person["relations"])>1])
+    # max([person["age"] for person in my_group if "friend" in person["relations"].keys()])
+
