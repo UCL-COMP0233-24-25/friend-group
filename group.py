@@ -88,7 +88,7 @@ def homework():
     print(mean_connections)
     max_age_with_connections = np.max([person["age"] for person in my_group.values() if person["connections"]])
     print(max_age_with_connections)
-    max_age_with_friends = np.max([person["age"] for person in my_group.values() if person["connections"] and "friend" in person["connections"].values()])
+    max_age_with_friends = np.max([person["age"] for person in my_group.values() if "friend" in person["connections"].values()])
     print(max_age_with_friends)
 
 homework()
