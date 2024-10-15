@@ -36,3 +36,13 @@ group = {
 
 
 print("Max age: ", max(x["age"] for x in group.values()) )
+
+relations = sum(len(x["relations"]) for x in group.values())
+average = relations /len(group) if len(group) > 0 else 0
+print("The average: ", average)
+
+
+print("Max age : ",  max(x["age"] for x in group.values() if len(x["relations"]) > 0) )
+
+print("Max age with friend:",max((x["age"] for x in group.values() if "friend" in x["relations"].values())) )
+
