@@ -2,14 +2,48 @@
 
 # Your code to go here...
 
-my_group =[{ "name": "Luhan", "age": 22, "job": "Student"},   
-        {  "name": "Wangjiayi", "age": 22, "job": "Student"},
-         {"name": "Wangxinping", "age": 22, "job": "Student"}]  
+my_group = [
+    {
+        'name': 'Jill',
+        'age': 26,
+        'job':'a biologist',
+        'connection': {
+            'friend': ['Zalika'],
+            'partner': ['John']
+        }
+    },
+    {
+        'name': 'Zalika',
+        'age': 28,
+        'job':'an artist',
+        'connection': {
+            'friend' : ['Jill']
+            }
+    },
+    {
+        'name': 'John',
+        'age': 27,
+        'job':'a writer',
+        'connection': {
+            'partner' : ['Jill']
+            }
+    },
+    {
+        'name': 'Nash',
+        'age': 34,
+        'job':'a chef',
+        'connection': {
+            'cousin' : ['John'], 
+            'landlord' : ['Zalika']
+            }
+    }
+]
 
 
-
-hh
 for row in my_group:  
-    print(f"{row['name']} is {row['age']}, a {row['job']}.")  
+    connections = " and ".join([f"{v[0]}'s {k}" for k, v in row['connection'].items()])
+    print(f"{row['name']} is {row['age']}, {row['job']}, {connections}")
+
+
 
 
