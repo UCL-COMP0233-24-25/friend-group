@@ -48,6 +48,18 @@ def print_my_group():
 
 
 # the maximum age of people in the group
+max_age = max([v['age'] for v in my_group])
+print(f'the maximum age of people in the group is {max_age}')
+
 # the average (mean) number of relations among members of the group
+relations_count = [len(person['connection']) for person in my_group]
+avg_relations = sum(relations_count) / len(relations_count)
+print(f'The average (mean) number of relations among members of the group is {avg_relations:.2f}')
+
 # the maximum age of people in the group that have at least one relation
+_max_age = max([v['age'] for v in my_group if len(v['connection']) > 0])
+print(f'the maximum age of people in the group that have at least one relation is {_max_age}')
+
 # [more advanced] the maximum age of people in the group that have at least one friend
+_max_age_ = max([v['age'] for v in my_group if 'friend' in v['connection'] and v['connection']['friend']])
+print(f'the maximum age of people in the group that have at least one friend is {_max_age_}')
