@@ -39,11 +39,15 @@ my_group = [
     }
 ]
 
+def print_my_group():
+    for row in my_group:
+        connections = " and ".join([f"{', '.join(map(str, v))}'s {k}" for k, v in row["connection"].items() if v])
+        print(f"{row['name']} is {row['age']}, {row['job']}, {connections}")
+    print("\n")
 
-for row in my_group:  
-    connections = " and ".join([f"{v[0]}'s {k}" for k, v in row['connection'].items()])
-    print(f"{row['name']} is {row['age']}, {row['job']}, {connections}")
 
 
-
-
+# the maximum age of people in the group
+# the average (mean) number of relations among members of the group
+# the maximum age of people in the group that have at least one relation
+# [more advanced] the maximum age of people in the group that have at least one friend
