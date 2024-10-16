@@ -9,7 +9,9 @@ my_group = {"Jill":
             "John":
             {"Job":"Writer", "Age":27, "Relations":{"Zalika":"Partner"}},
             "Nash":
-            {"Job":"Chef", "Age":34, "Relations":{"John":"Cousin","Zalika":"Landlord"}}}
+            {"Job":"Chef", "Age":34, "Relations":{"John":"Cousin","Zalika":"Landlord"}},
+            "Steve":
+            {"Job":"Toy", "Age":40, "Relations":{"John":"Friend","Nash":"Owner"}}}
 
 # to access use my_group["Jill"].values() will give values or my_group["Jill"]["Relations"][0]
 # ruff from command palette, ctrl shift p and format document will tidy up your code
@@ -30,8 +32,8 @@ for y in my_group:
             p= my_group[y]["Age"]
 
     if len(my_group[y]["Relations"]):
-        for key in my_group:
-            if my_group[y]["Relations"][key] == "Friend":
+        for a in my_group[y]["Relations"].values():
+            if a == "Friend":
                 if my_group[y]["Age"] > w:
                     w = my_group[y]["Age"]
 
@@ -39,4 +41,5 @@ for y in my_group:
 print(x) # max age
 print(z/i) # mean number of relations
 print(p) # max age of people with at least one relation
+print(w) # max age of people that have a friend
 
