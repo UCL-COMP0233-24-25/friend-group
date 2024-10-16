@@ -92,3 +92,19 @@ def homework():
     print(max_age_with_friends)
 
 homework()
+
+# Reading + Writing (YAML)
+import yaml
+with open("data_structure.yaml", "w") as f:
+    yaml.dump(my_group, stream=f)
+with open("data_structure.yaml", "r") as f:
+    loaded_data = yaml.safe_load(f)
+print(loaded_data)
+
+# Reading + Writing (JSON)
+import json
+with open("data_structure.json", "w") as f:
+    json.dump(my_group, f, indent=4, sort_keys=False)
+with open("data_structure.json", "r") as f:
+    loaded_data = json.loads(f.read())
+print(loaded_data)
