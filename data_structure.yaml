@@ -1,0 +1,28 @@
+Jill:
+  age: 26
+  connections:
+    John: partner
+    Zalika: friend
+  job: biologist
+John:
+  age: 27
+  connections:
+    Jill: partner
+    Nash: cousin
+  job: writer
+Nash:
+  age: 34
+  connections:
+    John: cousin
+    Zalika: landlord
+  job: chef
+Nobody:
+  age: 40
+  connections: {}
+  job: null
+Zalika:
+  age: 28
+  connections:
+    Jill: friend
+    Nash: tenant
+  job: artist
