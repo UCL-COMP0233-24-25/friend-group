@@ -43,3 +43,12 @@ print(z/i) # mean number of relations
 print(p) # max age of people with at least one relation
 print(w) # max age of people that have a friend
 
+#Excercise on data formats
+import json
+
+json_string = json.dumps(my_group)
+
+with open('my_file.json', 'w') as f:
+    f.write(json_string)
+
+print(type(my_group))
