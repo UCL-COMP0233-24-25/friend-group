@@ -1,10 +1,35 @@
-"""An example of how to represent a group of acquaintances in Python."""
-
-# Your code to go here...
+"""An example of how to represent a group of acquaintances in Python and perform some analytical calculations on the group."""
 
 # Define the group of acquaintances using dictionaries and lists
 
-# Function to add reciprocal connections
+def add_reciprocal_relations(group):
+    """
+    Function to add reciprocal relationships in the group dictionary.
+    For example, if person A is a landlord of person B, then person B is a tenant of person A.
+    """
+    for person_name, person_data in group.items():
+        for relation_name, relation_type in person_data['relations'].items():
+            if relation_type == 'cousin':
+                # Cousins are bidirectional
+                if person_name not in group[relation_name]['relations']:
+                    group[relation_name]['relations'][person_name] = 'cousin'
+            elif relation_type == 'landlord':
+                # Landlord-tenant is a bidirectional relationship
+                if person_name not in group[relation_name]['relations']:
+                    group[relation_name]['relations'][person_name] = 'tenant'
+            elif relation_type == 'tenant':
+                # Tenant-landlord is a bidirectional relationship
+                if person_name not in group[relation_name]['relations']:
+                    group[relation_name]['relations'][person_name] = 'landlord'
+            elif relation_type == 'friend':
+                # Friend relationships are bidirectional
+                if person_name not in group[relation_name]['relations']:
+                    group[relation_name]['relations'][person_name] = 'friend'
+            elif relation_type == 'partner':
+                # Partner relationships are bidirectional
+                if person_name not in group[relation_name]['relations']:
+                    group[relation_name]['relations'][person_name] = 'partner'
+
 # Define the group of people
 group = {
     "Jill": {
@@ -38,6 +63,9 @@ group = {
         }
     }
 }
+
+# Adding reciprocal relations to the group
+add_reciprocal_relations(group)
 
 # Calculating the maximum age of people in the group
 max_age = max(person["age"] for person in group.values())
