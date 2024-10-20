@@ -9,6 +9,8 @@ my_group = {
 }
 
 import numpy as np
+import json
+import yaml
 
 try:
     my_group
@@ -40,3 +42,21 @@ try:
     print('the maximum age of people in the group that have at least one friend is', con_age2)  
 except Exception as e:
     print('Error occurs when calculating.')
+
+#save my_group as JSON file:
+with open('my_group.json','w') as f:
+    json.dump(my_group,f)
+
+#read my_group.json file:
+with open('my_group.json','r') as f:
+    group_json = json.load(f) #also can use group_json = f.read()
+print(group_json)
+
+#save my_group as YAML file:
+with open('my_group.yaml','w') as f:
+    yaml.dump(my_group,stream = f)
+
+#read my_group.yaml file:
+with open('my_group.yaml','r') as f:
+    group_yaml = yaml.safe_load(f) #also can use group_json = f.read()
+print(group_yaml)
