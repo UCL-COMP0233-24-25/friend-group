@@ -1,5 +1,6 @@
 """An example of how to represent a group of acquaintances in Python."""
 
+
 my_group = [
     {
         "name": "Jill",
@@ -47,4 +48,3 @@ if __name__== "__main__":
     no_of_relations = (sum([len(person["relations"]) for person in my_group])/len([len(person["relations"]) for person in my_group]))
     max_age_relations = max([person["age"] for person in my_group if len(person["relations"])>1])
     # max([person["age"] for person in my_group if "friend" in person["relations"].keys()])
-
