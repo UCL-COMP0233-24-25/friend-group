@@ -1,16 +1,18 @@
-def average_age():
+def average_age(group):
     """Compute the average age of the group's members."""
     all_ages = [person["age"] for person in group.values()]
     return sum(all_ages) / len(group)
 
 
-def forget(person1, person2):
+def forget(group, person1, person2):
     """Remove the connection between two people."""
+    assert person1 in group, f"{person1} is not in the group!"
+    assert person2 in group, f"{person2} is not in the group!"
     group[person1]["relations"].pop(person2, None)
     group[person2]["relations"].pop(person1, None)
 
 
-def add_person(name, age, job, relations):
+def add_person(group, name, age, job, relations):
     """Add a new person with the given characteristics to the group."""
     new_person = {
         "age": age,
@@ -50,12 +52,48 @@ nash_relations = {
     "Zalika": "landlord"
 }
 
-add_person("Nash", 34, "chef", nash_relations)
+add_person(group, "Nash", 34, "chef", nash_relations)
 
-forget("Nash", "John")
+forget(group, "Nash", "John")
 
 if __name__ == "__main__":
+    friend_group = {
+    "Jess": {
+        "age": 26,
+        "job": "biologist",
+        "relations": {
+            "Zoey": "friend",
+            "Joeff": "partner"
+        }
+    },
+    "Zoey": {
+        "age": 28,
+        "job": "artist",
+        "relations": {
+            "Jess": "friend",
+        }
+    },
+    "Joeff": {
+        "age": 27,
+        "job": "writer",
+        "relations": {
+            "Jess": "partner"
+        }
+    }
+    }
     assert len(group) == 4, "Group should have 4 members"
-    assert average_age() == 28.75, "Average age of the group is incorrect!"
+    assert average_age(group) == 28.75, "Average age of the group is incorrect!"
     assert len(group["Nash"]["relations"]) == 1, "Nash should only have one relation"
     print("All assertions have passed!")
+
+    # Test the functions with the friend_group
+    print('Average age of the group:', average_age(friend_group))
+    print('Number of members in the group:', len(friend_group))
+    gregg_relations = {
+        "Jess": "friend",
+        "Zoey": "friend",
+        "Joeff": "friend"
+    }
+    add_person(friend_group, "Gregg", 34, "chef", gregg_relations)
+    print('Number of members in the group:', len(friend_group))
+    print('Average age of the group:', average_age(friend_group))
