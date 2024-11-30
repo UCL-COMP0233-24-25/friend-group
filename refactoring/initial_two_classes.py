@@ -18,7 +18,9 @@ class Group:
 
     def size(self):
         """Return how many people are in the group."""
-        pass
+        for member in self.members:
+            assert isinstance(member, Person), "Group members should be of type Person"
+        return len(self.members)
 
     def contains(self, name):
         """Check whether the group contains a person with the given name.
@@ -32,17 +34,36 @@ class Group:
 
     def number_of_connections(self, name):
         """Find the number of connections that a person in the group has"""
-        pass
+        if not self.contains(name):
+            raise ValueError(f"{name} is not in the group!")
+        return len(self.connections.get(name, {}))
 
     def connect(self, name1, name2, relation, reciprocal=True):
         """Connect two given people in a particular way.
         Optional reciprocal: If true, will add the relationship from name2 to name 1 as well
         """
-        pass
+        # Check if both people are in the group
+        if not self.contains(name1):
+            raise ValueError(f"{name1} is not in the group!")
+        if not self.contains(name2):
+            raise ValueError(f"{name2} is not in the group!")
+        # Check if the connection already exists
+        if name2 in self.connections.get(name1, {}):
+            raise ValueError(f"{name1} is already connected to {name2}!")
+        # Add the connection
+        self.connections.setdefault(name1, {})[name2] = relation
+        # Add the reciprocal connection
+        if reciprocal:
+            self.connections.setdefault(name2, {})[name1] = relation
 
     def forget(self, name1, name2):
         """Remove the connection between two people."""
-        pass
+        if not self.contains(name1):
+            raise ValueError(f"{name1} is not in the group!")
+        if not self.contains(name2):
+            raise ValueError(f"{name2} is not in the group!")
+        self.connections.get(name1, {}).pop(name2, None)
+        self.connections.get(name2, {}).pop(name1, None)
 
     def average_age(self):
         """Compute the average age of the group's members."""
@@ -55,8 +76,15 @@ if __name__ == "__main__":
     my_group = Group()
     # ...then add the group members one by one...
     my_group.add_person("Jill", 26, "biologist")
+    my_group.add_person("Zalika", 28, "artist")
+    my_group.add_person("John", 27, "writer")
+    my_group.add_person("Nash", 34, "chef")
     # ...then their connections
-    my_group.connect("Jill", "Zalika", "friend")
+    my_group.connect("Jill", "Zalika", "friend", reciprocal=True)
+    my_group.connect("John", "Jill", "partner", reciprocal=True)
+    my_group.connect("John", "Nash", "cousin", reciprocal=True)
+    my_group.connect("Zalika", "Nash", "tenant", reciprocal=False)
+    my_group.connect("Nash", "Zalika", "landlord", reciprocal=False)
     # ... then forget Nash and John's connection
     my_group.forget("Nash", "John")
 
