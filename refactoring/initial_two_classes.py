@@ -18,7 +18,7 @@ class Group:
 
     def size(self):
         """Return how many people are in the group."""
-        pass
+        return len(self.members)
 
     def contains(self, name):
         """Check whether the group contains a person with the given name.
@@ -32,7 +32,7 @@ class Group:
 
     def number_of_connections(self, name):
         """Find the number of connections that a person in the group has"""
-        pass
+        return(len(self.connections[name]))
 
     def connect(self, name1, name2, relation, reciprocal=True):
         """Connect two given people in a particular way.
