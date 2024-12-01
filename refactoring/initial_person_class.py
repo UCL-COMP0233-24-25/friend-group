@@ -16,7 +16,7 @@ class Person:
 
     def forget(self, person):
         """Removes any connections to a person"""
-        pass
+        self.connections.pop(person, None)
 
 
 def average_age(group):
