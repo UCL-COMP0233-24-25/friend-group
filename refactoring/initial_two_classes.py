@@ -58,8 +58,14 @@ if __name__ == "__main__":
     my_group = Group()
     # ...then add the group members one by one...
     my_group.add_person("Jill", 26, "biologist")
+    my_group.add_person("Zalika", 28, "artist")
+    my_group.add_person("John", 27, "writer")
+    my_group.add_person("Nash", 34, "chef")
     # ...then their connections
     my_group.connect("Jill", "Zalika", "friend")
+    my_group.connect("Jill", "John", "partner")
+    my_group.connect("Nash", "John", "cousin")
+    my_group.connect("Nash", "Zalika", "landlord", reciprocal=False)
     # ... then forget Nash and John's connection
     my_group.forget("Nash", "John")
 
