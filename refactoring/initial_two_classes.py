@@ -38,7 +38,9 @@ class Group:
         """Connect two given people in a particular way.
         Optional reciprocal: If true, will add the relationship from name2 to name 1 as well
         """
-        pass
+        self.connections[name1] = {name2: relation}
+        if reciprocal:
+           self.connections[name2] = {name1: relation}
 
     def forget(self, name1, name2):
         """Remove the connection between two people."""
