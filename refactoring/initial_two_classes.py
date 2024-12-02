@@ -38,15 +38,23 @@ class Group:
         """Connect two given people in a particular way.
         Optional reciprocal: If true, will add the relationship from name2 to name 1 as well
         """
-        self.connections[name1] = {name2: relation}
-        if reciprocal:
-            self.connections[name2] = {name1: relation}
+        if name1 not in self.connections:
+            self.connections[name1] = []
+        if name2 not in self.connections:
+            self.connections[name2] = []
         
+        self.connections[name1].append({name2: relation})
+    
+        if reciprocal:
+            self.connections[name2].append({name1: relation})       
 
     def forget(self, name1, name2):
         """Remove the connection between two people."""
-        self.connections[name1].pop(name2, None)
-
+        if name1 in self.connections:
+            self.connections[name1] = [conn for conn in self.connections[name1] if name2 not in conn]
+        if name2 in self.connections:
+            self.connections[name2] = [conn for conn in self.connections[name2] if name1 not in conn]
+            
     def average_age(self):
         """Compute the average age of the group's members."""
         all_ages = [person.age for person in self.members]
